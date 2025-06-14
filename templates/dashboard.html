@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - ScoreFut</title>
+</head>
+<body>
+    <h1>Jogos com probabilidade acima de 70%</h1>
+    <table border="1">
+        <tr><th>Casa</th><th>Fora</th><th>Mercado</th><th>Palpite</th><th>Probabilidade</th></tr>
+        {% for jogo in jogos %}
+        <tr>
+            <td>{{ jogo.time_casa }}</td>
+            <td>{{ jogo.time_fora }}</td>
+            <td>{{ jogo.mercado }}</td>
+            <td>{{ jogo.palpite }}</td>
+            <td>{{ jogo.prob }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('logout') }}">Sair</a>
+</body>
+</html>
